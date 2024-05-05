@@ -207,7 +207,7 @@ export default function Dashboard({ darkMode, t }) {
               </div>
             </div>
 
-            <div className='flex  gap-3 p-2'>
+            <div className='flex  gap-3 p-2 lg:hidden '>
               <div
                 className={`flex flex-row items-center gap-5  h-[80px]  hover:cursor-pointer ${
                   activeFilter === 'all' &&

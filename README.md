@@ -1,11 +1,18 @@
 # Installation
 
 1. clone this repository
-2. Install dependencies by running: `yarn`
-3. Start the development server with the command: `yarn dev`
-4. Once the server is running, open your web browser and go to: `http://localhost:5173/`
-5. To run test `yarn test`
+2. Ensure you have Node.js version 18 or higher installed.
+3. Install dependencies by running: `yarn ` Make sure you have Yarn installed globally. If not, install it globally with` npm install -g yarn`.
+4. Start the development server with the command: `yarn dev`
+5. Once the server is running, open your web browser and go to: `http://localhost:5173/`
+6. To run test `yarn test`
 
-## Approach
+## Technologies
 
-I opted for Redux Toolkit Query because it comes bundled with Redux Toolkit, and while using the dummy API, I noticed that it only indicates that the request has been successfully passed without any actual updating, editing, or adding functionalities.
+1. Vite React with JavaScript
+2. react18next for localization
+3. Redux ToolKit and Redux toolkit Query
+4. Tailwind Css
+5. Jest & React Testing Library
+
+I chose Redux Toolkit Query over React Query because it is bundled with Redux Toolkit. and While using the dummy API, I observed that it only indicates successful request completion without providing actual updating, editing, or adding functionalities.

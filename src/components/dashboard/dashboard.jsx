@@ -131,7 +131,83 @@ export default function Dashboard({ darkMode, t }) {
               darkMode ? ' bg-[#222831]' : 'bg-white'
             } `}
           >
-            <div className='flex flex-row items-center gap-8 m-5'>
+            <div className='lg:flex flex-row items-center gap-8 m-5 hidden'>
+              <div
+                className={`flex flex-row items-center gap-5  h-[80px]  hover:cursor-pointer ${
+                  activeFilter === 'all' &&
+                  'border-b-8 border-[#3656C4] rounded-b-lg'
+                } `}
+                onClick={() => {
+                  reset()
+                  handleNavigation('all')
+                }}
+              >
+                <p
+                  className={` ${
+                    activeFilter === 'all' ? 'text-[#3656C4]' : 'text-gray-500'
+                  } `}
+                >
+                  {t('All task')}
+                </p>
+                <p className='text-[#3656C4]  bg-gray-300 p-1 rounded-md w-[40px] text-center'>
+                  {todos?.todos?.length}
+                </p>
+              </div>
+              <div
+                className={`flex flex-row items-center gap-5 h-[80px] hover:cursor-pointer ${
+                  activeFilter === 'inProgress' &&
+                  'border-b-8 border-[#3656C4] rounded-b-lg'
+                }`}
+                onClick={() => {
+                  handleFilter({ completed: false })
+                  handleNavigation('inProgress')
+                }}
+              >
+                <p
+                  className={` ${
+                    activeFilter === 'inProgress'
+                      ? 'text-[#3656C4]'
+                      : 'text-gray-500'
+                  } `}
+                >
+                  {t('In progress')}{' '}
+                </p>
+                <p className='text-[#3656C4] bg-gray-300 p-1 rounded-md w-[40px] text-center'>
+                  {
+                    todos?.todos?.filter((todo) => todo.completed === false)
+                      ?.length
+                  }
+                </p>
+              </div>
+              <div
+                className={`flex flex-row items-center gap-5 h-[80px] hover:cursor-pointer ${
+                  activeFilter === 'completed' &&
+                  'border-b-8 border-[#3656C4] rounded-b-lg'
+                }`}
+                onClick={() => {
+                  handleFilter({ completed: true })
+                  handleNavigation('completed')
+                }}
+              >
+                <p
+                  className={` ${
+                    activeFilter === 'completed'
+                      ? 'text-[#3656C4]'
+                      : 'text-gray-500'
+                  } `}
+                >
+                  {t('Completed')}
+                </p>
+                <p className='text-[#3656C4] bg-gray-300 p-1 rounded-md w-[40px] text-center'>
+                  {
+                    todos?.todos?.filter((todo) => todo.completed === true)
+                      ?.length
+                  }
+                </p>
+              </div>
+            </div>
+
+            <div className='flex  gap-3 p-2'>
               <div
                 className={`flex flex-row items-center gap-5  h-[80px]  hover:cursor-pointer ${
                   activeFilter === 'all' &&

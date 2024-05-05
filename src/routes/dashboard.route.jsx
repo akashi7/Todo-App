@@ -35,14 +35,14 @@ export default function DashboardRoute() {
   }, [mode])
 
   return (
-    <div className='flex lg:h-[100vh] h-[100%] '>
+    <div className={`flex lg:h-[100vh] h-[100%]`}>
       <SideBar
         modal={modal}
         toogleModal={toogleModal}
         darkMode={darkMode}
         t={t}
       />
-      <div className='flex-1'>
+      <div className='flex-1 bg-red-400'>
         <NavBar toogleModal={toogleModal} darkMode={darkMode} t={t} />
         <Dashboard darkMode={darkMode} t={t} />
       </div>

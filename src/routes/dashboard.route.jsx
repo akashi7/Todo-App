@@ -42,7 +42,7 @@ export default function DashboardRoute() {
         darkMode={darkMode}
         t={t}
       />
-      <div className='flex-1 bg-red-400'>
+      <div className={`flex-1 ${darkMode ? 'bg-[#222831]' : ''} h-[100%]`}>
         <NavBar toogleModal={toogleModal} darkMode={darkMode} t={t} />
         <Dashboard darkMode={darkMode} t={t} />
       </div>

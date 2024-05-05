@@ -127,7 +127,7 @@ export default function Dashboard({ darkMode, t }) {
             </div>
           </div>
           <div
-            className={`mt-10  flex justify-between items-center h-[80px]  rounded-2xl ${
+            className={`mt-10  flex justify-between items-center lg:h-[80px] h-[100px]  rounded-2xl ${
               darkMode ? ' bg-[#222831]' : 'bg-white'
             } `}
           >

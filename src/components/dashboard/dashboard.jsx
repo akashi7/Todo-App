@@ -127,7 +127,7 @@ export default function Dashboard({ darkMode, t }) {
             </div>
           </div>
           <div
-            className={`mt-10  flex justify-between items-center lg:h-[80px] h-[100px]  rounded-2xl ${
+            className={`mt-10  lg:flex justify-between lg:items-center lg:h-[80px] h-[100px]  hidden rounded-2xl ${
               darkMode ? ' bg-[#222831]' : 'bg-white'
             } `}
           >
@@ -207,72 +207,6 @@ export default function Dashboard({ darkMode, t }) {
               </div>
             </div>
 
-            <div className='flex flex-row  gap-10 items-center p-2 lg:hidden '>
-              <div
-                className={`flex flex-col gap-3`}
-                onClick={() => {
-                  reset()
-                  handleNavigation('all')
-                }}
-              >
-                <p
-                  className={` ${
-                    activeFilter === 'all' ? 'text-[#3656C4]' : 'text-gray-500'
-                  } `}
-                >
-                  {t('All task')}
-                </p>
-                <p className='text-[#3656C4]  bg-gray-300 p-1 rounded-md w-[40px] text-center'>
-                  {todos?.todos?.length}
-                </p>
-              </div>
-              <div
-                className={`flex flex-col gap-3`}
-                onClick={() => {
-                  handleFilter({ completed: false })
-                  handleNavigation('inProgress')
-                }}
-              >
-                <p
-                  className={` ${
-                    activeFilter === 'inProgress'
-                      ? 'text-[#3656C4]'
-                      : 'text-gray-500'
-                  } `}
-                >
-                  {t('In progress')}{' '}
-                </p>
-                <p className='text-[#3656C4] bg-gray-300 p-1 rounded-md w-[40px] text-center'>
-                  {
-                    todos?.todos?.filter((todo) => todo.completed === false)
-                      ?.length
-                  }
-                </p>
-              </div>
-              <div
-                className={`flex flex-col gap-3`}
-                onClick={() => {
-                  handleFilter({ completed: true })
-                  handleNavigation('completed')
-                }}
-              >
-                <p
-                  className={` ${
-                    activeFilter === 'completed'
-                      ? 'text-[#3656C4]'
-                      : 'text-gray-500'
-                  } `}
-                >
-                  {t('Completed')}
-                </p>
-                <p className='text-[#3656C4] bg-gray-300 p-1 rounded-md w-[40px] text-center'>
-                  {
-                    todos?.todos?.filter((todo) => todo.completed === true)
-                      ?.length
-                  }
-                </p>
-              </div>
-            </div>
             <div className='lg:flex flex-row items-center gap-5 px-5 hidden'>
               <div className='border border-gray-300 p-2 flex flex-row items-center gap-5 rounded-xl'>
                 <img
@@ -293,6 +227,76 @@ export default function Dashboard({ darkMode, t }) {
                 />
                 <p>{t('New task')}</p>
               </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            className={'flex flex-col  p-2 lg:hidden rounded-2xl gap-6 mt-8 '}
+          >
+            <div
+              className={`flex flex-row gap-3`}
+              onClick={() => {
+                reset()
+                handleNavigation('all')
+              }}
+            >
+              <p
+                className={` ${
+                  activeFilter === 'all' ? 'text-[#3656C4]' : 'text-gray-500'
+                } `}
+              >
+                {t('All task')}
+              </p>
+              <p className='text-[#3656C4]  bg-gray-300 p-1 rounded-md w-[40px] text-center'>
+                {todos?.todos?.length}
+              </p>
+            </div>
+            <div
+              className={`flex flex-row gap-3`}
+              onClick={() => {
+                handleFilter({ completed: false })
+                handleNavigation('inProgress')
+              }}
+            >
+              <p
+                className={` ${
+                  activeFilter === 'inProgress'
+                    ? 'text-[#3656C4]'
+                    : 'text-gray-500'
+                } `}
+              >
+                {t('In progress')}{' '}
+              </p>
+              <p className='text-[#3656C4] bg-gray-300 p-1 rounded-md w-[40px] text-center'>
+                {
+                  todos?.todos?.filter((todo) => todo.completed === false)
+                    ?.length
+                }
+              </p>
+            </div>
+            <div
+              className={`flex flex-row gap-3`}
+              onClick={() => {
+                handleFilter({ completed: true })
+                handleNavigation('completed')
+              }}
+            >
+              <p
+                className={` ${
+                  activeFilter === 'completed'
+                    ? 'text-[#3656C4]'
+                    : 'text-gray-500'
+                } `}
+              >
+                {t('Completed')}
+              </p>
+              <p className='text-[#3656C4] bg-gray-300 p-1 rounded-md w-[40px] text-center'>
+                {
+                  todos?.todos?.filter((todo) => todo.completed === true)
+                    ?.length
+                }
+              </p>
             </div>
           </div>
         </div>

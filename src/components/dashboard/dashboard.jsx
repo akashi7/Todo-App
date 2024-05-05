@@ -207,12 +207,9 @@ export default function Dashboard({ darkMode, t }) {
               </div>
             </div>
 
-            <div className='flex  gap-3 p-2 lg:hidden '>
+            <div className='flex flex-row  gap-10 items-center p-2 lg:hidden '>
               <div
-                className={`flex flex-row items-center gap-5  h-[80px]  hover:cursor-pointer ${
-                  activeFilter === 'all' &&
-                  'border-b-8 border-[#3656C4] rounded-b-lg'
-                } `}
+                className={`flex flex-col gap-3`}
                 onClick={() => {
                   reset()
                   handleNavigation('all')
@@ -230,10 +227,7 @@ export default function Dashboard({ darkMode, t }) {
                 </p>
               </div>
               <div
-                className={`flex flex-row items-center gap-5 h-[80px] hover:cursor-pointer ${
-                  activeFilter === 'inProgress' &&
-                  'border-b-8 border-[#3656C4] rounded-b-lg'
-                }`}
+                className={`flex flex-col gap-3`}
                 onClick={() => {
                   handleFilter({ completed: false })
                   handleNavigation('inProgress')
@@ -256,10 +250,7 @@ export default function Dashboard({ darkMode, t }) {
                 </p>
               </div>
               <div
-                className={`flex flex-row items-center gap-5 h-[80px] hover:cursor-pointer ${
-                  activeFilter === 'completed' &&
-                  'border-b-8 border-[#3656C4] rounded-b-lg'
-                }`}
+                className={`flex flex-col gap-3`}
                 onClick={() => {
                   handleFilter({ completed: true })
                   handleNavigation('completed')

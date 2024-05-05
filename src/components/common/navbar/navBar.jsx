@@ -42,7 +42,7 @@ export default function NavBar({ toogleModal, darkMode }) {
         <input
           type='text'
           placeholder='Search '
-          className='p-3 bg-[#F5F5F5] lg:w-[350px] w-[240px] rounded-xl'
+          className='p-3 bg-[#F5F5F5] lg:w-[350px] w-[240px] rounded-xl lg:block hidden'
         />
         <img
           src={searchIcon}

@@ -2,6 +2,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useToasts } from 'react-toast-notifications'
 import dots from '../../assets/dotss.svg'
+import dotswhite from '../../assets/dotsswhite.svg'
+
 import people from '../../assets/manyico.png'
 import message from '../../assets/messages.svg'
 import messagewhite from '../../assets/messageswhite.svg'
@@ -89,7 +91,7 @@ export default function AllTasks({ todos, darkMode, t }) {
                 {todo?.completed ? `${t('Completed')}` : `${t('In progress')}`}
               </p>
               <img
-                src={dots}
+                src={darkMode ? dotswhite : dots}
                 alt='dots'
                 className='w-6 hover:cursor-pointer'
                 onClick={() => handleToggleMenu(idx)}

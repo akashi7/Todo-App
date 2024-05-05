@@ -75,7 +75,7 @@ export default function AllTasks({ todos, darkMode, t }) {
       {todos?.map((todo, idx) => {
         return (
           <div
-            className={`lg:w-[20%] w-full bg-white p-5 rounded-2xl lg:m-5 m-0 lg:mb-0 mb-5 relative ${
+            className={`lg:w-[20%] w-full p-5 rounded-2xl lg:m-5 m-0 lg:mb-0 mb-5 relative ${
               darkMode ? 'bg-[#222831]' : 'bg-white'
             }`}
             key={idx}

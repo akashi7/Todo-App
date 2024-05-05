@@ -31,7 +31,8 @@ export default function DashboardRoute() {
 
   useEffect(() => {
     dispatch(toggleInBetween(JSON.parse(mode)))
-  }, [mode, dispatch])
+    //eslint-disable-next-line
+  }, [mode])
 
   return (
     <div className='flex lg:h-[100vh] h-[100%] '>

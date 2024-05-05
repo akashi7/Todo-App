@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.shadow-left {
+  background: linear-gradient(to right, rgba(54, 95, 227, 0.2), transparent);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --tw-bg-opacity: 1;
+    --tw-bg-opacity: 1;
+    --tw-text-opacity: 1;
+    --tw-text-opacity: 1;
+  }
+  body.dark {
+    --tw-bg-opacity: 1;
+    --tw-bg-opacity: 1;
+    --tw-text-opacity: 1;
+    --tw-text-opacity: 1;
+    --tw-bg-opacity: 1;
+    --tw-bg-opacity: 1;
+    --tw-bg-opacity: 1;
+  }
+}

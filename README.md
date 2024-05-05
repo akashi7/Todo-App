@@ -4,6 +4,7 @@
 2. Install dependencies by running: `yarn`
 3. Start the development server with the command: `yarn dev`
 4. Once the server is running, open your web browser and go to: `http://localhost:5173/`
+5. To run test `yarn test`
 
 ## Approach
 

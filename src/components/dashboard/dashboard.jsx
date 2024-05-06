@@ -95,7 +95,13 @@ export default function Dashboard({ darkMode, t }) {
             <p>{t('From 23 April')}</p>
           </div>
           <div className='mt-10 flex lg:justify-between lg:flex-row lg:gap-0 gap-4 lg:items-center flex-col'>
-            <h2 className=' text-4xl font-semibold'> {t('Website Design')}</h2>
+            <h2
+              className=' text-4xl font-semibold'
+              data-testid='dashboard-title'
+            >
+              {' '}
+              {t('Website Design')}
+            </h2>
             <div className='flex flex-row items-center gap-5'>
               <div className='w-4 h-4 rounded-full bg-green-500'></div>
               <p className=' text-gray-500'>{t('Updated 12 min ago')}</p>
@@ -313,7 +319,7 @@ export default function Dashboard({ darkMode, t }) {
             onClick={toggleModal}
           >
             <img src={darkMode ? addwhite : add} alt='add' className='w-5' />
-            <p>{t('New task')}</p>
+            <p data-testid='newtask'>{t('New task')}</p>
           </div>
         </div>
         <div className='mt-10 w-full'>

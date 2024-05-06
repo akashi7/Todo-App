@@ -65,7 +65,7 @@ export default function Dashboard({ darkMode, t }) {
   }
 
   const onAddSuccess = () => {
-    addToast('Todo addedd Successfully', {
+    addToast(`${t('Todo addedd Successfully')}`, {
       appearance: 'success',
       autoDismiss: true,
     })
@@ -79,7 +79,6 @@ export default function Dashboard({ darkMode, t }) {
       onSuccess: onAddSuccess,
     })
   }
-  //webcreative
   return (
     <>
       <section

@@ -13,5 +13,11 @@
   "Submit": "Soumettre",
   "Website Design":"Conception de sites Web",
   "Add todo":"Ajouter une tâche",
-  "todo":"Tâche"
+  "todo":"Tâche",
+  "Edited Successfully":"Modifié avec succès",
+  "Deleted Successfully":"Supprimé avec succès",
+  "Todo addedd Successfully":"Tâche ajoutée avec succès",
+  "Edit":"Modifier",
+  "Delete":"Supprimer"
+
 }

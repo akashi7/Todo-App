@@ -3,11 +3,9 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { useToasts } from 'react-toast-notifications'
 import dots from '../../assets/dotss.svg'
 import dotswhite from '../../assets/dotsswhite.svg'
-
 import people from '../../assets/manyico.png'
 import message from '../../assets/messages.svg'
 import messagewhite from '../../assets/messageswhite.svg'
-
 import handleAPIRequests from '../../helpers/handleApiRequest'
 import { useDeleteTodoMutation, useEditTodoMutation } from '../../lib/api/todo'
 
@@ -60,12 +58,15 @@ export default function AllTasks({ todos, darkMode, t }) {
   }, [])
 
   const onEditSuccess = () => {
-    addToast('Edit Successfully', { appearance: 'success', autoDismiss: true })
+    addToast(`${t('Edited Successfully')}`, {
+      appearance: 'success',
+      autoDismiss: true,
+    })
     setOpenMenuIndex(null)
   }
 
   const onDeleteSuccess = () => {
-    addToast('Deleted Successfully', {
+    addToast(`${t('Deleted Successfully')}`, {
       appearance: 'success',
       autoDismiss: true,
     })
@@ -102,11 +103,13 @@ export default function AllTasks({ todos, darkMode, t }) {
             {openMenuIndex === idx && (
               <div
                 ref={menuRef}
-                className='absolute right-0 top-[64px] bg-[#F5F5F5] z-30 p-5'
+                className={`absolute right-0 top-[64px]  z-30 p-5 ${
+                  darkMode ? 'bg-black text-white' : 'bg-[#F5F5F5] text-black'
+                }`}
               >
                 <div className='flex gap-4 flex-col cursor-pointer'>
-                  <p onClick={() => handleEdit(todo)}>Edit</p>
-                  <p onClick={() => handleDelete(todo)}>Delete</p>
+                  <p onClick={() => handleEdit(todo)}>{t('Edit')}</p>
+                  <p onClick={() => handleDelete(todo)}>{t('Delete')}</p>
                 </div>
               </div>
             )}
